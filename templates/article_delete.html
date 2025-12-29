@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="delete-page-wrapper">
+    <div class="delete-card">
+        <h1>Delete Article</h1>
+
+        <div class="delete-warning">
+            <p>Are you sure you want to permanently delete this article?</p>
+            <p class="mb-0"><strong class="delete-article-title">{{ article.title }}</strong></p>
+        </div>
+
+        <p class="delete-message">This action cannot be undone. All associated comments will also be deleted.</p>
+
+        <form method="post" class="delete-form">
+            {% csrf_token %}
+            <div class="delete-actions">
+                <a href="{% url 'article_detail' article.pk %}" class="btn btn-outline-secondary">Cancel</a>
+                <button type="submit" class="btn btn-danger">Yes, Delete Article</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

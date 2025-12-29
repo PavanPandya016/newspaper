@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="home-page">
+    <div class="home-welcome">
+        {% if user.is_authenticated %}
+        <h1>Welcome back, {{ user.username }}!</h1>
+        <p>Read the latest articles, create new content, and engage with our community.</p>
+
+        <div class="home-actions">
+            <a href="{% url 'article_list' %}" class="btn btn-primary">View All Articles</a>
+            <a href="{% url 'article_new' %}" class="btn btn-outline-secondary">Write Article</a>
+            <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-secondary">Log Out</button>
+            </form>
+        </div>
+        {% else %}
+        <h1>Welcome to Our News Platform</h1>
+        <p>Discover amazing articles and share your voice with our community of writers and readers.</p>
+
+        <div class="home-actions">
+            <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+            <a href="{% url 'signup' %}" class="btn btn-outline-secondary">Sign Up</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
