@@ -1,6 +1,6 @@
 # Newspaper
 
-A simple Django-based news website that supports article posting, comments, user accounts and basic page management. This repository implements a small, easy-to-run project intended for learning and demonstration purposes.
+A simple Django-based news website that supports article posting, comments, user accounts and page management. This repository implements a small, easy-to-run project intended for learning and demonstration purposes.
 
 ## Features
 
@@ -73,21 +73,3 @@ Run the Django test suite with:
 ```bash
 python manage.py test
 ```
-
-## Contributing
-
-Contributions are welcome. Suggested workflow:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes and run tests
-4. Open a pull request with a clear description of your changes
-
-## License
-
-This project does not include a license file. Add a license if you plan to publish or distribute the code.
-
-## Notes
-
-This project is intended as a learning example. Review `settings.py` before deploying to production — update secret keys, debug flags, allowed hosts and static/media configuration as appropriate.
-# newspaper
